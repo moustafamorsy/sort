@@ -7,7 +7,6 @@ function sort(array) {
         for (let j = 0; j < array.length; j++) {
         if (array[j] > array[j+1]) {
           swap(array , j , j+1);}
-          console.log(array)
     }  
    
     }
