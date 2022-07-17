@@ -6,8 +6,9 @@ let unsorted1 = [5 , 50 , 7 , 1 , 3 , 10 , 8 , 9 , 4 , 2 , 6 , 0 ]
 let unsorted2 = [5 , 50 , 7 , 1 , 3 , 10 , 8 , 9 , 4 , 2 , 6 , 0 ]
 
 let unsorted3 = [5 , 50 , 7 , 1 , 3 , 10 , 8 , 9 , 4 , 2 , 6 , 0 ]
+let unsorted4 = [5 , 50 , 7 , 1 , 3 , 10 , 8 , 9 , 4 , 2 , 6 , 0 , -1]
 
-// compare and swap the 2 data beside each other in order time complaxity worse case O(n2)
+// compare and swap the 2 data beside each other in order time complaxity worse case O(n2) bubble
 
 function Bubblesort(array) {
 
@@ -35,7 +36,7 @@ function swap(array, j , change) {
 
  Bubblesort(unsorted);
 
-// shift the data in order like order cards in hand time complaxity worse case O(n2)
+// shift the data in order like order cards in hand time complaxity worse case O(n2) inserction
 
 function Inserectionsort(array) {
 
@@ -58,9 +59,26 @@ console.log(array);
 
 Inserectionsort(unsorted1);
 
+// selection sort
 
+function selectionsort(array) {
 
+  for (let i = 0; i < array.length; i++) {
+    let minindex = i ;
+    for (let j = i + 1; j < array.length; j++) {
+     if (array[j] < array[minindex]) {
+      minindex = j;
+     }
+      
+    }
+     const temp = array[i] ;
+     array[i] = array[minindex] ;
+     array[minindex] = temp ;
+  }
+  console.log(array);
+}
 
+selectionsort(unsorted4);
 // merge sort  time complaxity worse case O(log n)
 
 const mergeSort = array => {
